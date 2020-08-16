@@ -1,0 +1,24 @@
+﻿@model MVCKutuphane.Models.EntityF.Yazarlar
+@{
+    ViewBag.Title = "YazarEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Yeni Yazar Ekleme</h2>
+<form method="post" class="form-group-lg">
+
+    <label>Yazar Adı</label>
+    <input type="text" class="form-control" name="Ad" />
+    @Html.ValidationMessageFor(x => x.Ad, "", new { @style = "color:red" })<br />
+
+    <label>Yazar Soyadı</label>
+    <input type="text" class="form-control" name="Soyad" />
+    @Html.ValidationMessageFor(x => x.Soyad, "", new { @style = "color:red" })<br />
+
+    <label>Yazar Bilgileri</label>
+    <input type="text" class="form-control" name="Detay" /><br />
+
+    <button class="btn btn-success">Yeni Yazar Ekle</button>
+
+</form>
+

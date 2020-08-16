@@ -1,0 +1,21 @@
+﻿@model MVCKutuphane.Models.EntityF.Kategoriler
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("KategoriGuncelle", "Kategoriler", FormMethod.Post))
+{
+    <h2 class="text-center">Kategori Güncelleme</h2>
+    <form method="post" class="form-group-lg">
+
+        @Html.HiddenFor(x => x.Id )
+        <label>Kategori Adı</label>
+        @Html.TextBoxFor(x => x.Kategori, new { @class="form-control"})<br />
+
+        <button class="btn btn-success">Bilgileri Güncelle</button>
+
+    </form>
+}
+
+

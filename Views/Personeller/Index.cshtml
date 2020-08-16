@@ -1,0 +1,31 @@
+﻿@using MVCKutuphane.Models.EntityF
+@model List<Personeller>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Personeller Bölümü</h2>
+<table class="table table-bordered table-hover table-responsive">
+
+    <tr class="active">
+        <th>Id</th>
+        <th>Personel</th>
+        <th>Silme</th>
+        <th>Güncelleme</th>
+    </tr>
+    <tbody>
+        @foreach (var p in Model)
+        {
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Personel</td>
+            <td>@Html.ActionLink("Sil","PersonelSil",new { id=p.Id}, new { @class="btn btn-danger", onclick="return confirm('Gerçekten Silmek İstiyor musunuz?')"})</td>
+            <td><a href="/Personeller/PersonelGetir/@p.Id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+<a href="/Personeller/YeniPersonel" class="btn btn-primary">Yeni Personel Ekle</a>
+

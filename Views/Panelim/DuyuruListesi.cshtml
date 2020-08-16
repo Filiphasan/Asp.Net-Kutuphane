@@ -1,0 +1,25 @@
+﻿@using MVCKutuphane.Models.EntityF
+@model List<Duyurular>
+@{
+    ViewBag.Title = "DuyuruListesi";
+    Layout = "~/Views/Shared/_LayoutPanelim.cshtml";
+}
+
+<h2 class="text-center">Duyurular Bölümü</h2>
+<table class="table table-bordered table-hover">
+
+    <tr class="active">
+        <th>Kategori</th>
+        <th>Duyuru</th>
+    </tr>
+    <tbody>
+        @foreach (var d in Model)
+        {
+            <tr>
+                <td>@d.Kategori</td>
+                <td>@d.Duyuru</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

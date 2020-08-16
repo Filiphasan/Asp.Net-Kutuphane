@@ -1,0 +1,28 @@
+﻿@model MVCKutuphane.Models.EntityF.Hareketler
+@{
+    ViewBag.Title = "OduncVer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Ödünç Verme İşlemi</h2>
+<form method="post" class="form-group-lg">
+
+    <label>Kitap Id</label>
+    @Html.DropDownListFor(x => x.Kitaplar.Id, (List<SelectListItem>)ViewBag.kitapListe, new { @class = "form-control" })<br />
+
+    <label>Üye</label>
+    @Html.DropDownListFor(x => x.Uyeler.Id, (List<SelectListItem>)ViewBag.uyeListe, new { @class = "form-control" })<br />
+
+    <label>Personel Id</label>
+    @Html.DropDownListFor(x => x.Personeller.Id, (List<SelectListItem>)ViewBag.personelListe, new { @class = "form-control" })<br />
+
+    <label>Alış Tarihi</label>
+    <input type="text" class="form-control" name="AlisTarihi" value="@DateTime.Today.ToShortDateString()" /><br />
+
+    <label>İade Tarihi</label>
+    <input type="text" class="form-control" name="İadeTarih" value="@DateTime.Today.AddDays(7).ToShortDateString()" /><br />
+
+    <button class="btn btn-primary">Ödünç Ver</button>
+
+</form>
+

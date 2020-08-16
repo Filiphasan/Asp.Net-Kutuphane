@@ -1,0 +1,36 @@
+﻿@using MVCKutuphane.Models.EntityF
+@model List<Hareketler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Eski Kitap İşlemleri</h2>
+<table class="table table-bordered table-hover table-responsive">
+
+    <tr class="active">
+        <th>İşlem Id</th>
+        <th>Kitap</th>
+        <th>Üye</th>
+        <th>Personel</th>
+        <th>Alış Tarihi</th>
+        <th>Normal İade Tarihi</th>
+        <th>Geldiği Tarih</th>
+    </tr>
+    <tbody>
+        @foreach (var i in Model)
+        {
+        <tr>
+            <td>@i.Id</td>
+            <td>@i.Kitaplar.Ad</td>
+            <td>@i.Uyeler.Ad @i.Uyeler.Soyad</td>
+            <td>@i.Personeller.Personel</td>
+            <td>@Convert.ToDateTime(@i.AlisTarihi).ToShortDateString()</td>
+            <td>@Convert.ToDateTime(@i.İadeTarih).ToShortDateString()</td>
+            <td>@Convert.ToDateTime(@i.GeldigiTarih).ToShortDateString()</td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+

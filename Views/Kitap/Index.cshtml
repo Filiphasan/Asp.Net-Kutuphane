@@ -1,0 +1,49 @@
+﻿@using MVCKutuphane.Models.EntityF
+@model List<Kitaplar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Kitaplar Bölümü</h2>
+@using(Html.BeginForm("Index","Kitap",FormMethod.Post))
+{
+<p>
+    <label>Kitap Adı:&nbsp; </label><input type="text" name="p" placeholder="Ara..." />&nbsp;<button class="btn btn-success">Ara</button>
+</p>
+}
+<table class="table table-bordered table-hover table-responsive">
+
+    <tr class="active">
+        <th>Id</th>
+        <th>Kitap Adı</th>
+        <th>Kategori</th>
+        <th>Yazarı</th>
+        <th>Basım Yılı</th>
+        <th>Yayınevi</th>
+        <th>Sayfa Sayısı</th>
+        <th>Durum</th>
+        <th>Silme</th>
+        <th>Güncelleme</th>
+    </tr>
+    <tbody>
+        @foreach (var k in Model)
+        {
+        <tr>
+            <td>@k.Id</td>
+            <td>@k.Ad</td>
+            <td>@k.Kategoriler.Kategori</td>
+            <td>@k.Yazarlar.Ad @k.Yazarlar.Soyad</td>
+            <td>@k.BasimYili</td>
+            <td>@k.YayinEvi</td>
+            <td>@k.Sayfa</td>
+            <td>@k.Durum</td>
+            <td>@Html.ActionLink("Sil", "KitapSil", new { id = k.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istiyor musunuz?')" })</td>
+            <td><a href="/Kitap/KitapGetir/@k.Id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+<a href="/Kitap/YeniKitap" class="btn btn-primary">Yeni Kitap Ekle</a>
+

@@ -1,0 +1,40 @@
+﻿@model MVCKutuphane.Models.EntityF.Uyeler
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPanelim.cshtml";
+}
+
+<h2 class="text-center">Profilim</h2>
+@using (Html.BeginForm("Index2", "Panelim", FormMethod.Post))
+{
+    <table class="table ">
+        <tr>
+            <td class="text-right" style="width:10%"><label class="font-weight-bolder">Mail Adresi:</label></td>
+            <td>@HttpContext.Current.User.Identity.Name</td>
+        </tr>
+        <tr>
+            <td class="text-right" style="width:10%"><label class="font-weight-bolder">Ad:</label></td>
+            <td>@Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td class="text-right" style="width:10%"><label class="font-weight-bolder">Soyad:</label></td>
+            <td>@Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td class="text-right" style="width:10%"><label class="font-weight-bolder">Kullanıcı Adı:</label></td>
+            <td>@Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td class="text-right" style="width:10%"><label class="font-weight-bolder">Şifre:</label></td>
+            <td>@Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td class="text-right" style="width:10%"><label class="font-weight-bolder">Okul:</label></td>
+            <td>@Html.TextBoxFor(x => x.Okul, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button class=" btn btn-warning">Bilgilerimi Güncelle</button></td>
+        </tr>
+    </table>
+}

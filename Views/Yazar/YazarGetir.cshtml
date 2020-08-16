@@ -1,0 +1,28 @@
+﻿@model MVCKutuphane.Models.EntityF.Yazarlar
+@{
+    ViewBag.Title = "YazarGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("YazarGuncelle", "Yazar",FormMethod.Post))
+{
+    <h2 class="text-center">Yazar Bilgileri Güncelleme</h2>
+    <form method="post" class="form-group-lg">
+
+        @Html.HiddenFor(x => x.Id)
+        <label>Yazar Adı</label>
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })<br />
+
+        <label>Yazar Adı</label>
+        @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })<br />
+
+        <label>Yazar Adı</label>
+        @Html.TextBoxFor(x => x.Detay, new { @class = "form-control" })<br />
+
+        <button class="btn btn-success">Bilgileri Güncelle</button>
+
+    </form>
+}
+
+
+

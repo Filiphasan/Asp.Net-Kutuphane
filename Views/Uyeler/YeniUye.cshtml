@@ -1,0 +1,37 @@
+﻿@model MVCKutuphane.Models.EntityF.Uyeler
+@{
+    ViewBag.Title = "YeniUye";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Yeni Üye Ekleme</h2>
+<form method="post" class="form-group-lg">
+
+    <label>Üye Ad</label>
+    <input type="text" class="form-control" name="Ad" /><br />
+
+    <label>Üye Soyad</label>
+    <input type="text" class="form-control" name="Soyad" /><br />
+
+    <label>Üye Mail</label>
+    <input type="text" class="form-control" name="Mail" /><br />
+
+    <label>Üye Kullanıcı Adı</label>
+    <input type="text" class="form-control" name="KullaniciAdi" /><br />
+
+    <label>Üye Şifre</label>
+    <input type="text" class="form-control" name="Sifre" /><br />
+
+    <label>Üye Fotoğraf</label>
+    <input type="text" class="form-control" name="Fotograf" /><br />
+
+    <label>Üye Telefon</label>
+    <input type="text" class="form-control" name="Telefon" /><br />
+
+    <label>Üye Okul</label>
+    <input type="text" class="form-control" name="Okul" /><br />
+
+    <button class="btn btn-info">Üye Ekle</button>
+
+</form>
+

@@ -1,0 +1,36 @@
+﻿@model MVCKutuphane.Models.EntityF.Kitaplar
+@{
+    ViewBag.Title = "KitapGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("KitapGuncelle", "Kitap", FormMethod.Post))
+{
+    <h2 class="text-center">Kitap Bilgileri Güncelleme</h2>
+    <form method="post" class="form-group-lg">
+
+        @Html.HiddenFor(x => x.Id)
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })<br />
+
+        <label>Kategori</label>
+        @Html.DropDownListFor(x => x.Kategoriler.Id, (List<SelectListItem>)ViewBag.dropKategori, new { @class = "form-control" })<br />
+
+        <label>Yazar</label>
+        @Html.DropDownListFor(x => x.Yazarlar.Id, (List<SelectListItem>)ViewBag.dropYazar, new { @class = "form-control" })<br />
+
+        <label>Basım Yılı</label>
+        @Html.TextBoxFor(x => x.BasimYili, new { @class = "form-control" })<br />
+
+        <label>Yayın Evi</label>
+        @Html.TextBoxFor(x => x.YayinEvi, new { @class = "form-control" })<br />
+
+        <label>Sayfa Sayısı</label>
+        @Html.TextBoxFor(x => x.Sayfa, new { @class = "form-control" })<br />
+
+        <button class="btn btn-info">Bilgileri Güncelle</button>
+
+    </form>
+}
+
+

@@ -1,0 +1,31 @@
+﻿@model MVCKutuphane.Models.EntityF.Kitaplar
+@{
+    ViewBag.Title = "YeniKitap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Yeni Kitap Ekleme</h2>
+<form class="form-group-lg" method="post">
+
+    <label>Kitap Adı</label>
+    <input type="text" class="form-control" name="Ad" /><br />
+
+    <label>Kategori</label>
+    @Html.DropDownListFor(x => x.Kategoriler.Id, (List<SelectListItem>)ViewBag.dropKategori, new { @class = "form-control" })<br />
+
+    <label>Yazar</label>
+    @Html.DropDownListFor(x => x.Yazarlar.Id, (List<SelectListItem>)ViewBag.dropYazar, new { @class = "form-control" })<br />
+
+    <label>Basım Yılı</label>
+    <input type="text" class="form-control" name="BasimYili" /><br />
+
+    <label>Yayın Evi</label>
+    <input type="text" class="form-control" name="YayinEvi" /><br />
+
+    <label>Sayfa Sayısı</label>
+    <input type="text" class="form-control" name="Sayfa" /><br />
+
+    <button class="btn btn-info">Kitap Ekle</button>
+
+</form>
+

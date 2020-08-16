@@ -1,0 +1,19 @@
+﻿@model MVCKutuphane.Models.EntityF.Duyurular
+@{
+    ViewBag.Title = "YeniDuyuru";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Yeni Duyuru Yayınla</h2>
+<form method="post" class="form-group-lg">
+
+    <label class="font-weight-bolder">Kategori</label>
+    <input type="text" class="form-control" name="Kategori" /><br />
+
+    <label class="font-weight-bolder">Duyuru</label>
+    <textarea id="TextArea1" rows="3" cols="20" class="form-control" name="Duyuru" placeholder="Bir şeyler yazın.."></textarea><br />
+
+    <button class="btn btn-primary">Duyuru Yayınla</button>
+
+</form>
+

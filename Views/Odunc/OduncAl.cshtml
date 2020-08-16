@@ -1,0 +1,39 @@
+﻿@model MVCKutuphane.Models.EntityF.Hareketler
+@{
+    ViewBag.Title = "OduncAl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("OduncİadeAl", "Odunc", FormMethod.Post))
+{
+    <h2 class="text-center">Ödünç Kitap Teslim Alma</h2>
+    <form class="form-group-lg" method="post">
+
+        @Html.HiddenFor(x => x.Id)
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(x => x.Kitaplar.Ad, new { @class = "form-control" })<br />
+
+        <label>Üye Ad Soyad</label>
+        @Html.TextBoxFor(x => x.Uyeler.Ad, new { @class = "form-control" })<br />
+
+        <label>Personel</label>
+        @Html.TextBoxFor(x => x.Personeller.Personel, new { @class = "form-control" })<br />
+
+        <label>Alış Tarihi</label>
+        @Html.TextBoxFor(x => x.AlisTarihi, "{0:dd.MM.yyyy}", new { @class = "form-control" })<br />
+
+        <label>İade Tarihi(Normal)</label>
+        @Html.TextBoxFor(x => x.İadeTarih, "{0:dd.MM.yyyy}", new { @class = "form-control" })<br />
+
+        <label>İade Tarihi(Getirilen)</label>
+        <input type="text" class="form-control" name="GeldigiTarih" value="@DateTime.Now.ToShortDateString()" /> <br />
+
+        <label>İade Tarihi(Getirilen)</label>
+        <input type="text" class="form-control" name="Gecinput" value="@ViewBag.cezaGun" /> <br />
+
+        <button class="btn btn-success">Ödünç Kitabı İade Al</button>
+
+    </form>
+}
+
+

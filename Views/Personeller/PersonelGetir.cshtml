@@ -1,0 +1,21 @@
+﻿@model MVCKutuphane.Models.EntityF.Personeller
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGuncelle", "Personeller", FormMethod.Post))
+{
+    <h2 class="text-center">Personel Güncelleme</h2>
+    <form class="form-group-lg" method="post">
+
+        @Html.HiddenFor(x=>x.Id)
+        <label>Personel Ad-Soyad</label>
+        @Html.TextBoxFor(x => x.Personel, new { @class = "form-control" })<br />
+
+        <button class="btn btn-success">Bilgileri Güncelle</button>
+
+    </form>
+}
+
+

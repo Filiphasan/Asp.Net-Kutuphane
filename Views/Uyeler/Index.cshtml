@@ -1,0 +1,53 @@
+﻿@using MVCKutuphane.Models.EntityF
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Uyeler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-center">Üyeler Bölümü</h2>
+@using (Html.BeginForm("Index","Uyeler",FormMethod.Post))
+{
+<p>
+    <label>Üye Ara(İsme Göre):</label>&nbsp;&nbsp;<input type="text" name="p" placeholder="Ara..." />&nbsp;&nbsp;<button class="btn btn-success">Ara</button>
+</p>
+}
+<table class="table table-hover table-bordered table-responsive">
+
+    <tr>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Mail</th>
+        <th>Kullanıcı Adı</th>
+        <th>Şifre</th>
+        <th>Telefon</th>
+        <th>Okul</th>
+        <th>Kitap Geçmişi</th>
+        <th>Silme</th>
+        <th>Güncelleme</th>
+    </tr>
+    <tbody>
+        @foreach (var u in Model)
+        {
+        <tr>
+            <td>@u.Id</td>
+            <td>@u.Ad</td>
+            <td>@u.Soyad</td>
+            <td>@u.Mail</td>
+            <td>@u.KullaniciAdi</td>
+            <td>@u.Sifre</td>
+            <td>@u.Telefon</td>
+            <td>@u.Okul</td>
+            <td><a href="/Uyeler/KitapListesi/@u.Id" class="btn btn-info">Listele</a></td>
+            <td>@Html.ActionLink("Sil", "UyeSil", new { id = u.Id }, new { @class = "btn btn-danger" })</td>
+            <td><a href="/Uyeler/UyeGetir/@u.Id" class="btn btn-warning">Güncelle</a></td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+@Html.PagedListPager((IPagedList)Model, sayi => Url.Action("Index", new { sayi }))
+<a href="/Uyeler/YeniUye" class="btn btn-primary">Yeni Üye Ekle</a>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f05989b835d641ddbd5950c9cc21994f" Name="Diagram1">
+        <EntityTypeShape EntityType="MVCKutuphaneModel.Cezalar" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCKutuphaneModel.Hareketler" Width="1.5" PointX="6" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCKutuphaneModel.Kasa" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCKutuphaneModel.Kategoriler" Width="1.5" PointX="1.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCKutuphaneModel.Kitaplar" Width="1.5" PointX="3.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCKutuphaneModel.Personeller" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCKutuphaneModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCKutuphaneModel.Uyeler" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCKutuphaneModel.Yazarlar" Width="1.5" PointX="1.5" PointY="10" IsExpanded="true" />
+        <AssociationConnector Association="MVCKutuphaneModel.FK_Cezalar_Hareketler" ManuallyRouted="false" />
+        <AssociationConnector Association="MVCKutuphaneModel.FK_Cezalar_Uyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="MVCKutuphaneModel.FK_Hareketler_Kitaplar" ManuallyRouted="false" />
+        <AssociationConnector Association="MVCKutuphaneModel.FK_Hareketler_Personeller" ManuallyRouted="false" />
+        <AssociationConnector Association="MVCKutuphaneModel.FK_Hareketler_Uyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="MVCKutuphaneModel.FK_Kitaplar_Kategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="MVCKutuphaneModel.FK_Kitaplar_Yazarlar" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MVCKutuphaneModel.Hakkimizda" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MVCKutuphaneModel.Mesajlar" Width="1.5" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MVCKutuphaneModel.KullaniciMesajlar" Width="1.5" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MVCKutuphaneModel.Duyurular" Width="1.5" PointX="8.375" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,30 @@
+﻿@using MVCKutuphane.Models.EntityF
+@model List<KullaniciMesajlar>
+@{
+    ViewBag.Title = "GidenMesaj";
+    Layout = "~/Views/Shared/_LayoutPanelim.cshtml";
+}
+
+<h2 class="text-center">Gönderilen Mesajlar</h2>
+<table class="table table-bordered table-hover">
+
+    <tr class="active bg-dark text-white">
+        <th>Alıcı</th>
+        <th>Konu</th>
+        <th>Tarih</th>
+        <th>İçerik</th>
+    </tr>
+    <tbody>
+        @foreach (var m in Model)
+        {
+        <tr>
+            <td>@m.Alici</td>
+            <td>@m.Konu</td>
+            <td>@m.Tarih</td>
+            <td>@m.Icerik</td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
